@@ -1,5 +1,6 @@
 
 window.onload = () => {
+	//LOGIN
 	const btnLoginOk = document.getElementById('btnLogin');
 	btnLoginOk.addEventListener('click', () => {
 		const loginUserOk = document.getElementById('user-login').value;
@@ -13,6 +14,7 @@ window.onload = () => {
 		}
 	});
 }
+
 /*document.getElementById('btnAlumnasId').addEventListener('click', ()=>{
 	 fetch("https://laboratoria-la-staging.firebaseapp.com/cohorts/:id")
     .then(function(res){
@@ -22,4 +24,3 @@ console.log(res);
     .thn()
    
 })*/
-
