@@ -1,4 +1,5 @@
 
+
 const usersJson= '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
 const progressJson = '../data/cohorts/lim-2018-03-pre-core-pw/progress.json';
 const cohortsJson = '../data/cohorts/cohorts.json';
@@ -6,8 +7,7 @@ const cohortsJson = '../data/cohorts/cohorts.json';
 fetch(usersJson)
 .then(response => response.json())
 .then(users => {
-	
-		listStudents(users);
+	listStudents(users);
 })
 const listStudents = users=>{
 	let NewList = [];
@@ -21,47 +21,50 @@ const listStudents = users=>{
 	
 }
 
-
-
- 
-
-window.computeUsersStats = (users, progress, courses) =>{
-	
-
-const usersJson = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
-const progressJson = '../data/cohorts/lim-2018-03-pre-core-pw/progress.json';
-const cohortsJson = '../data/cohorts.json';
-
-var usersData = fetch(usersJson)
-.then(response => response.json())
-.then(users => {
-	console.log(users);
-	usersData = users;
-	recolector();
-});
+//guardando en un arreglo y pushando
+const nameUsers = (users) =>{
+	let usersArray = [];
+	users.forEach(element => {
+		usersArray.push(element.name);
+	});
+	console.log(usersArray);
+}
 
 var progressData = fetch(progressJson)
 .then(response => response.json())
 .then(progressJson => {
 	const progress = Object.entries(progressJson);
-	console.log(progress);
 	progressData = progress;
 	recolector();
 });
 
+
 var cohortsData = fetch(cohortsJson)
 .then(response => response.json())
 .then(courses => {
-	console.log(courses);
 	cohortsData = courses;
 	recolector();
+	nameCourse(courses);
 });
+
+const nameCourse = (courses) =>{
+	let coursesArray = [];
+	courses.forEach(element => {
+		coursesArray.push(element.coursesIndex);
+	});
+	console.log(coursesArray);
+}
+
+
 
 function recolector(){
 	if(usersData && progressData && cohortsData){
 		computeUsersStats(usersData, progressData, ["curso"]);
 	}
 }
+
+//Recorriendo objetos de progress
+
 
 window.computeUsersStats = (users, progress, courses) =>{
 
