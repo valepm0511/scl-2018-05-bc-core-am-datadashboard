@@ -2,58 +2,65 @@
 const usersJson = '../data/cohorts/lim-2018-03-pre-core-pw/users.json';
 const progressJson = '../data/cohorts/lim-2018-03-pre-core-pw/progress.json';
 const cohortsJson = '../data/cohorts.json';
-//guardando las llamadas
-var usersData = fetch(usersJson)
+//guardando promesa usuario
+let usersData = fetch(usersJson)
 .then(response => response.json())
 .then(users => {
 	usersData = users;
-	recolector();
+	
 	nameUsers(users);
 });
-//guardando en un arreglo y pushando
+//guardando en un arreglo y pushando de usuario
 const nameUsers = (users) =>{
 	let usersArray = [];
 	users.forEach(element => {
 		usersArray.push(element.name);
 	});
-	console.log(usersArray);
+	document.write(usersArray);
 }
-
-var progressData = fetch(progressJson)
+//guardando promesa progress
+let progressData = fetch(progressJson)
 .then(response => response.json())
 .then(progressJson => {
 	const progress = Object.entries(progressJson);
 	progressData = progress;
-	recolector();
+	//console.log (progressData);
+	
 });
 
+for(var i in progressData){
+	//imprime todo el arreglo
+	console.log(progressData[i]['intro']['units']);
+//recorre intro
+console.log(Object.keys(progressData[i]['intro']['units']))
 
-var cohortsData = fetch(cohortsJson)
+//recorre todas las unidades
+for(var x in progressData[i]['intro']){
+	console.log(x);
+}
+}
+
+//guardando promesa cursos
+let cohortsData = fetch(cohortsJson)
 .then(response => response.json())
 .then(courses => {
 	cohortsData = courses;
-	recolector();
 	nameCourse(courses);
 });
-
+//guardando en un arreglo y pushando de curso
 const nameCourse = (courses) =>{
 	let coursesArray = [];
 	courses.forEach(element => {
 		coursesArray.push(element.coursesIndex);
 	});
-	console.log(coursesArray);
+	//console.log(coursesArray);
 }
 
 
-
-function recolector(){
-	if(usersData && progressData && cohortsData){
-		computeUsersStats(usersData, progressData, ["curso"]);
-	}
-}
 
 window.computeUsersStats = (users, progress, courses) =>{
 
+	
 }
 window.sortUsers = (users, orderBy, orderDirection) =>{
 }
