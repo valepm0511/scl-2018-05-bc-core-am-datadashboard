@@ -15,20 +15,24 @@ window.onload = () => {
 	});
 }
 
-
-fetch('../data/cohorts/lim-2018-03-pre-core-pw/users.json')
-.then(response => response.json())
-.then(data => {
-	users = data;
-	fetch('../data/cohorts/lim-2018-03-pre-core-pw/progress.json')
+const btnUsersOk = document.getElementById('btnUsers');
+const containerUsersOk = document.getElementById('containerUsers');
+btnUsersOk.addEventListener('click', () => {
+	fetch('../data/cohorts/lim-2018-03-pre-core-pw/users.json')
 	.then(response => response.json())
-	.then(progressJSON => {
-		progress = progressJSON;
-		fetch('../data/cohorts.json')
+	.then(userJSON => {
+		users = userJSON;
+		fetch('../data/cohorts/lim-2018-03-pre-core-pw/progress.json')
 		.then(response => response.json())
-		.then(cohortJSON => {
-			cohort = cohortJSON;
-			window.computeUsersStats(users, progress, cohort);
+		.then(progressJSON => {
+			progress = progressJSON;
+			fetch('../data/cohorts.json')
+			.then(response => response.json())
+			.then(cohortJSON => {
+				cohort = cohortJSON;
+				window.computeUsersStats(users, progress, cohort);
+
+			});
 		});
 	});
 });
