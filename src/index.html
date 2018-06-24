@@ -2,6 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>Data Dashboard</title>
 	<!-- Bootstrap -->
 	<link rel="stylesheet" type="text/css" href="bootstrap.css">
@@ -13,7 +14,7 @@
 <body>
 	<div class="container container-login" id="login">
 		<div class="row justify-content-center mt-5 pt-5">
-			<div class="col-md-5">
+			<div class="col-md-5 col-sm-12">
 				<div class="img-logo">
 					<img src="logo.png">
 				</div>
@@ -31,7 +32,7 @@
 							<input type="password" name="password" id="password-login" class="form-control" required placeholder="Ingrese Contraseña...">
 						</div>
 					</div>
-					<div class="col-md-12 text-center">
+					<div class="col-md-12 col-sm-12 text-center">
 						<button type="submit" class="btn btn-warning mt-3 mb-3" id="btnLogin">Ingresar</button>
 						<p  class="text-center">
 							<a href="#">¿Olvidaste tu contraseña?</a>
@@ -45,7 +46,7 @@
 	<!-- Logo Banner -->
 	<div class="container divDisplayNone" id="containerSearch">
 		<section class="row justify-content-center">
-			<div class="col-sm-3 p-2">
+			<div class="col-sm-12 col-sm-3 p-2">
 				<img src="logo.png" class="img-fluid">
 			</div>
 		</section>
@@ -54,7 +55,7 @@
 			<div class="col-md-1 col-sm-2">
 				<img src="img-cat.jpg" class="img-face">
 			</div>
-			<div class="col-md-11 col-sm-10">
+			<div class="col-md-11 col-sm-8">
 				<p class="lead mt-3" id="welcomeUser"></p>
 			</div>
 		</section>
@@ -66,11 +67,11 @@
 		<section class="col-sm">
 			<form>
 				<div class="form-group row mt-3">
-					<label for="alumnasId" class="col-sm-2 col-form-label lead">Buscar alumas por ID</label>
-					<div class="col-sm-8">
+					<label for="alumnasId" class="col-sm-2 col-form-label lead">Buscar alumnas</label>
+					<div class="col-sm-12 col-md-8">
 						<input type="email" class="form-control" id="alumnasId" placeholder="Buscar">
 					</div>
-					<div class="col-sm-2">
+					<div class="col-sm-12 col-md-2 mt-sm-3">
 						<button type="button" class="btn btn-warning btn-block">Buscar</button>
 					</div>
 				</div>
@@ -78,60 +79,14 @@
 		</section>
 		<hr>
 		<!-- Buscador de alumnas por select -->
-		<section class="row mt-2">
-			<div class="col-sm col-md-6">
-				<select class="custom-select">
-					<option selected>Sede</option>
-					<option value="1">Lima - Perú</option>
-					<option value="2">Santiago - Chile</option>
-					<option value="3">Guadalajara - Mexico</option>
-					<option value="4">Ciudad de Mexico - Mexico</option>
-					<option value="5">Sao Paulo - Brasil</option>
-				</select>
-			</div>
-			<div class="col-sm col-md-6">
-				<select class="custom-select">
-					<option selected>Jornada</option>
-					<option value="1">AM</option>
-					<option value="2">PM</option>
-				</select>
-			</div>
-		</section>
-		<section class="row mt-4">
-			<div class="col-sm col-md-6">
-				<select class="custom-select">
-					<option selected>Especialidad</option>
-					<option value="1">Front-End Developer</option>
-					<option value="2">UX Designer</option>
-				</select>
-			</div>
-			<div class="col-sm col-md-6">
-				<select class="custom-select">
-					<option selected>Cursos</option>
-					<option value="1">Curso 1</option>
-					<option value="2">Curso 2</option>
-					<option value="3">Curso 3</option>
-					<option value="4">Curso 4</option>
-					<option value="5">Curso 5</option>
-					<option value="6">Curso 6</option>
-				</select>
-			</div>
-		</section>
-		<section class="row mt-4">
-			<div class="col-sm col-md-6">
-				<select class="custom-select">
-					<option selected>Generacion</option>
-					<option value="1">2014</option>
-					<option value="2">2015</option>
-					<option value="3">2016</option>
-					<option value="4">2017</option>
-					<option value="5">2018</option>
-				</select>
-			</div>
-		</section>
 		<section class="row justify-content-center">
-			<div class="col-sm-2 mt-5">
+			<div class="col-sm-3 mt-5">
 				<button type="button" class="btn btn-warning btn-block">Buscar</button>
+			</div>
+		</section>
+		<section class="row justify-content-center" id="userScreen">
+			<div class="col-sm-12">
+				
 			</div>
 		</section>
 		
