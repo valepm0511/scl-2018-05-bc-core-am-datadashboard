@@ -21,8 +21,8 @@ Basandonos en la información dada, diseñamos un bosquejo en el cual se le cosu
 
 El diseño en alta fidelidad se realizo con Figma
 
-![alt fidelidad 1](src/imgDashBoard/figma-1.png)
-![alt fidelidad 2](src/imgDashBoard/figma-2.png)
-![alt fidelidad 3](src/imgDashBoard/figma-3.png)
-![alt fidelidad 4](src/imgDashBoard/figma-4.png)
+![alt fidelidad 1](src/imgDashBoard/figma-1.jpg)
+![alt fidelidad 2](src/imgDashBoard/figma-2.jpg)
+![alt fidelidad 3](src/imgDashBoard/figma-3.jpg)
+![alt fidelidad 4](src/imgDashBoard/figma-4.jpg)
 
