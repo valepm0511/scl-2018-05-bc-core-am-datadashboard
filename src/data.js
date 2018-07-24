@@ -35,7 +35,6 @@ window.computeUsersStats = (users, progress, courses) => {
         percentTotal += element.percent / Object.keys(progressUser).length;
         for (let unit of Object.values(element.units)) { 
           for (let part of Object.values(unit.parts)) { 
-
             if (part.length === 0) {
             	quizzes = 0;
             	exercises = 0;
@@ -44,7 +43,6 @@ window.computeUsersStats = (users, progress, courses) => {
             	exercisesPercent = 0;
             	readPercent = 0;
             }
-
             if (part.type === 'quiz') { 
             	quizzes++;
             }
