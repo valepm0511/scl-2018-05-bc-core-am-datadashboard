@@ -1,42 +1,51 @@
-window.onload = () => {
-	//LOGIN
-	const btnLoginOk = document.getElementById('btnLogin');
-	btnLoginOk.addEventListener('click', () => {
-		const loginUserOk = document.getElementById('user-login').value;
-		const passwordLoginOk = document.getElementById('password-login').value;
-		if (passwordLoginOk == '123456') {
-			document.getElementById('login').classList.add('divDisplayNone');
-			document.getElementById('containerSearch').classList.remove('divDisplayNone');
-			document.getElementById('containerSearch').classList.add('divDisplayBlock');
-			document.getElementById('welcomeUser').innerHTML = 'Bienvenid@ ' + loginUserOk;
-		}else{
-			alert("Usuario y/o contraña incorrecta");
-		}
-	});
-}
-
-const btnUsersOk = document.getElementById('btnUsers');
-const containerUsersOk = document.getElementById('containerUsers');
-btnUsersOk.addEventListener('click', () => {
-	fetch('../data/cohorts/lim-2018-03-pre-core-pw/users.json')
-	.then(response => response.json())
-	.then(userJSON => {
-		users = userJSON;
-		fetch('../data/cohorts/lim-2018-03-pre-core-pw/progress.json')
-		.then(response => response.json())
-		.then(progressJSON => {
-			progress = progressJSON;
-			fetch('../data/cohorts.json')
-			.then(response => response.json())
-			.then(cohortJSON => {
-				cohort = cohortJSON;
-				window.computeUsersStats(users, progress, cohort);
-
-			});
-		});
-	});
+let users = null;
+let progress = null;
+let cohorts = null;
+let usersStats = null;
+//conectamos al json de users
+fetch('../data/cohorts/lim-2018-03-pre-core-pw/users.json')
+.then(response => response.json())
+.then(usersJSON => {
+	users = usersJSON;
+	//console.log(users);
+	jsonOk();
+})
+.catch(error => {
+	console.error("No pudimos obtener usuarios");
+	console.error("ERROR > " + error.stack);
+});
+//conectamos al json de progress
+fetch('../data/cohorts/lim-2018-03-pre-core-pw/progress.json')
+.then(response => response.json())
+.then(progressJSON => {
+	progress = progressJSON;
+	//console.log(progress);
+	jsonOk();
+})
+.catch(error => {
+	console.error("No pudimos obtener el progreso");
+	console.error("ERROR > " + error.stack);
+});
+//conectamos al json de cohorts
+fetch('../data/cohorts.json')
+.then(response => response.json())
+.then(cohortsJSON => {
+	cohorts = cohortsJSON;
+	//console.log(cohorts);
+	jsonOk();
+})
+.catch(error => {
+	console.error("No pudimos obtener el listado de cohorts");
+	console.error("ERROR > " + error.stack);
 });
 
-
-
-
+const jsonOk = () => {
+	if (users && progress && cohorts) {
+		//console.log(cohorts);
+		const cohort = cohorts.find(item => item.id === 'lim-2018-03-pre-core-pw');
+		//console.log(cohort);
+		const courses = Object.keys(cohort.coursesIndex);
+		//console.log(courses);
+		usersStats = window.computeUsersStats(users, progress, courses);
+	}
+}
