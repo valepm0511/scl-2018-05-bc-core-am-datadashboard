@@ -76,40 +76,76 @@
 			</div>
 		</section>	
 	</div>
- -->
-	<!-- PERFIL ALUMNA -->
-	<!-- <div class="container divDisplayNone" id="containerAlumna">
-		<section class="row justify-content-center">
-			<div class="col-sm-3 p-2">
-				<img src="logo.png" class="img-fluid">
-			</div>
-		</section> -->
-		<!-- Bienvenida -->
-		<!-- <section class="row background-avatar align-items-center p-3">
-			<div class="col-sm-1">
-				<img src="img-cat.jpg" class="img-fluid img-face">
-			</div>
-			<div class="col-sm-9">
-				<p class="lead mt-3">Bienvenid@ Usuario</p>
-			</div>
-		</section> -->
-		<!-- Buscador de alumnas por id -->
-		<!-- <section class="row mt-4">
-			<div class="col-sm-6">
-				<p class="lead">Perfil Alumna</p>
-			</div>
-			<div class="col-sm-6">
-				<a href="#" class="lead float-right"><i class="fas fa-arrow-left"></i> Regresar al Panel de busqueda</a>
-			</div>
-		</section>
-		<hr>
+-->
 
-	</div> -->
-	<!-- Jquery, popper y js Bootstrap-->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-	<script src="main.js"></script>
-	<script src="data.js"></script>
+<table class="table">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Nombre</th>
+			<th scope="col">Porcentaje Total </th>
+		</tr>
+	</thead>
+	<tbody id="tableInfo">
+
+	</tbody>
+</table>
+
+<table class="table">
+	<thead class="thead-dark">
+		<tr>
+			<p>Ejercicios</p>
+			<th scope="col">Nombre</th>
+			<th scope="col">Total</th>
+			<th scope="col">Completitud</th>
+			<th scope="col">Porcentaje</th>
+		</tr>
+	</thead>
+	<tbody id="tableExercises">
+		
+	</tbody>
+</table>
+
+<table class="table">
+	<thead class="thead-dark">
+		<tr>
+			<p>Lecturas</p>
+			<th scope="col">Nombre</th>
+			<th scope="col">Total</th>
+			<th scope="col">Completitud</th>
+			<th scope="col">Porcentaje</th>
+		</tr>
+	</thead>
+	<tbody id="tableReads">
+		
+	</tbody>
+</table>
+<table class="table">
+	<thead class="thead-light">
+		<tr>
+			<p>Quizzes</p>
+			<th scope="col">Nombre</th>
+			<th scope="col">Total</th>
+			<th scope="col">Completitud</th>
+			<th scope="col">Porcentaje</th>
+			<th scope="col">scoreSum</th>
+			<th scope="col">scoreAvg</th>
+		</tr>
+	</thead>
+	<tbody id="tableQuizzes">
+		
+	</tbody>
+</table>
+
+<div id="wrapUsers">
+
+</div>
+
+<!-- Jquery, popper y js Bootstrap-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+<script src="main.js"></script>
+<script src="data.js"></script>
 </body>
 </html>

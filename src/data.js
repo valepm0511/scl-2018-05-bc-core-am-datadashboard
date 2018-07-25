@@ -2,6 +2,10 @@ window.computeUsersStats = (users, progress, courses) => {
 	for(let i in users) {
 		let idUsers = users[i].id;
     let progressUser = progress[idUsers];
+    let tableInfo = document.getElementById('tableInfo');
+    let tableExercises = document.getElementById('tableExercises');
+    let tableReads = document.getElementById('tableReads');
+    let tableQuizzes = document.getElementById('tableQuizzes');
     if (JSON.stringify(progressUser) === '{}') {  
     	users[i].stats = {
     		percent: 0,
@@ -93,7 +97,11 @@ window.computeUsersStats = (users, progress, courses) => {
       	}
       };
 
-      console.log(users[i].stats);
+      tableInfo.innerHTML += "<tr><td>"+users[i].id+"</td><td>"+users[i].name+"</td><td>"+users[i].stats.percent+"</td></tr>";
+      tableExercises.innerHTML += "<tr><td>"+users[i].name+"</td><td>"+users[i].stats.exercises.total+"</td><td>"+users[i].stats.exercises.completed+"</td><td>"+users[i].stats.exercises.percent+"</td></tr>";
+      tableReads.innerHTML += "<tr><td>"+users[i].name+"</td><td>"+users[i].stats.reads.total+"</td><td>"+users[i].stats.reads.completed+"</td><td>"+users[i].stats.reads.percent+"</td></tr>";
+      tableQuizzes.innerHTML += "<tr><td>"+users[i].name+"</td><td>"+users[i].stats.quizzes.total+"</td><td>"+users[i].stats.quizzes.completed+"</td><td>"+users[i].stats.quizzes.percent+"</td><td>"+users[i].stats.quizzes.scoreSum+"</td><td>"+users[i].stats.quizzes.scoreAvg+"</td></tr>";
+      //console.log(users[i].name);
     }
   }
   return users;
